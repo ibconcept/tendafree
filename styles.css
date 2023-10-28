@@ -1,0 +1,80 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 1%;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.logo { 
+    margin-left: 12%; 
+    padding: auto;
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+    display: inline;
+    }
+     
+
+header {
+    background-color: #1ca517;
+    color: #fff;
+    text-align: center;
+    padding: 4%;
+    display: flex;
+    
+    align-items: first baseline;
+    align-content: baseline;
+    align-self: baseline;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+#features {
+    background-color: #f7f7f7;
+}
+
+.feature {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#registration {
+    background-color: #1ca517;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #012406;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
