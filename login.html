@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+</head>
+<body>
+  <header>
+    <h1>User Profile</h1>
+    <h2>Welcome, User!</h2>
+  </header>
+  
+  <main>
+    <section>
+      <h2>User Profile Information</h2>
+      <div id="profileInfo">
+        <!-- User profile information will be fetched and populated here -->
+      </div>
+    </section>
+    
+    <section>
+      <h2>Preferred Tenders</h2>
+      <ul id="preferredTenders">
+        <!-- Preferred tenders will be fetched and populated here -->
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Applied Tenders</h2>
+      <ul id="appliedTenders">
+        <!-- Applied tenders will be fetched and populated here -->
+      </ul>
+    </section>
+  </main>
+  
+  <script>
+    // Fetch user profile information
+    fetch('/user/profile')
+      .then(response => response.json())
+      .then(profileData => {
+        // Populate profile information in the HTML
+        document.getElementById('profileInfo').innerHTML = `
+          <p>User Name: ${profileData.name}</p>
+          <p>Email: ${profileData.email}</p>
+          <!-- Add more profile information fields -->
+        `;
+      })
+      .catch(error => console.error('Error fetching user profile:', error));
+    
+    // Fetch preferred tenders
+    fetch('/user/preferences')
+      .then(response => response.json())
+      .then(preferredTenders => {
+        // Populate preferred tenders in the HTML
+        const preferredTendersList = document.getElementById('preferredTenders');
+        preferredTenders.forEach(tender => {
+          const li = document.createElement('li');
+          li.textContent = `Tender: ${tender.name}, Type: ${tender.type}`;
+          preferredTendersList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error fetching preferred tenders:', error));
+    
+    // Fetch applied tenders
+    fetch('/user/applied-tenders')
+      .then(response => response.json())
+      .then(appliedTenders => {
+        // Populate applied tenders in the HTML
+        const appliedTendersList = document.getElementById('appliedTenders');
+        appliedTenders.forEach(tender => {
+          const li = document.createElement('li');
+          li.textContent = `Tender: ${tender.name}, Type: ${tender.type}`;
+          appliedTendersList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error fetching applied tenders:', error));
+  </script>
+</body>
+</html>

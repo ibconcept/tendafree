@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Support - Tendafree</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/support">Support</a></li>
+        <!-- Add other navigation links -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Contact Us</h1>
+      <p>If you have any inquiries or need assistance, feel free to reach out:</p>
+      <ul>
+        <li>Email: support@tendafree.com</li>
+        <li>Phone: +1-123-456-7890</li>
+        <li>Address: [Your Address Here]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>How It Works</h1>
+      <p>Our platform simplifies the tendering process:</p>
+      <ol>
+        <li>Create an account</li>
+        <li>Browse available tenders</li>
+        <li>Submit proposals</li>
+        <!-- Add more steps -->
+      </ol>
+    </section>
+
+    <section>
+      <h1>Send us your Query</h1>
+      <form action="/send-query" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="query">Your Query:</label><br>
+        <textarea id="query" name="query" rows="4" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+
+    <section>
+      <h1>FAQs</h1>
+      <h3>Q: How do I create an account?</h3>
+      <p>A: Click on the 'Sign Up' button and fill in the required details.</p>
+
+      <h3>Q: How can I find tenders related to my industry?</h3>
+      <p>A: Use the search bar and filters to narrow down the tenders.</p>
+
+      <h3>Q: What happens after I submit a proposal?</h3>
+      <p>A: Your proposal will be reviewed by the tender giver.</p>
+      <!-- Add more FAQs -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Tendafree. All rights reserved.</p>
+  </footer>
 </body>
 </html>

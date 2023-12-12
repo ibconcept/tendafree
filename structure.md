@@ -1,0 +1,15 @@
+- /backend
+  - server.js
+  - /routes
+    - userRoutes.js
+    - tenderRoutes.js
+  - /controllers
+    - userController.js
+    - tenderController.js
+  - /models
+    - userModel.js
+    - tenderModel.js
+- /frontend
+  - index.html
+  - styles.css
+  - app.js (or other frontend scripts)

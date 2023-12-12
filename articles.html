@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Articles - Tendafree</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+    .article {
+      border-bottom: 1px solid #ccc;
+      padding: 20px;
+      transition: height 0.3s ease;
+      cursor: pointer;
+    }
+    .article:hover {
+      background-color: #f9f9f9;
+    }
+    .article h2 {
+      margin-top: 0;
+    }
+    .full-content {
+      height: auto;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="article" onclick="expandArticle(this)">
+    <h2>Article Title 1</h2>
+    <p>Preview of Article 1... <span class="expand-link">[Read more]</span></p>
+    <div class="full-content" style="display: none;">
+      <p>Full content of Article 1...</p>
+    </div>
+  </div>
+
+  <div class="article" onclick="expandArticle(this)">
+    <h2>Article Title 2</h2>
+    <p>Preview of Article 2... <span class="expand-link">[Read more]</span></p>
+    <div class="full-content" style="display: none;">
+      <p>Full content of Article 2...</p>
+    </div>
+  </div>
+
+  <!-- Add more articles with similar structure -->
+
+  <script>
+    function expandArticle(article) {
+      const content = article.querySelector('.full-content');
+      const expandLink = article.querySelector('.expand-link');
+      
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        expandLink.textContent = '[Show less]';
+      } else {
+        content.style.display = 'none';
+        expandLink.textContent = '[Read more]';
+      }
+    }
+  </script>
+</body>
+</html>
