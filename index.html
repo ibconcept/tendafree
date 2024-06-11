@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tendafree - Online Tendering Platform</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
     <header>
-         
+        <div class="logo-container">
             <img class="logo" src="logo.PNG" alt="Logo">
-           
-        <h1> tendafree</h1>
+        </div>
         <p>Your trusted online platform for efficient tendering and supplier verification.</p>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
             <li><a href="tenders.html">Tenders</a></li>
-            <li><a href="myprofile.html">myprofile</a></li>
-            <li><a href="login.html">login</a></li>
+            <li><a href="myprofile.html">Profile</a></li>
+            <li><a href="login.html">Login</a></li>
             <li><a href="supplier.html">Suppliers</a></li>
             <li><a href="about.html">About </a></li>
             <li><a href="support.html">Support</a></li>
-            <li><a href="articles.html">articles</a></li>
-
+            <li><a href="articles.html">Articles</a></li>
         </ul>
     </nav>
 
     <section id="features">
         <h2>Our Features</h2>
-        <div class="feature">
-            <i class="fas fa-gavel"></i>
+        <div class="feature ripple">
             <h3>Efficient Tendering</h3>
             <p>We streamline the tendering process, making it easy for institutions to list and find tenders.</p>
         </div>
-        <div class="feature">
-            <i class="fas fa-file"></i>
+        <div class="feature ripple">
             <h3>Save Tender Documents</h3>
             <p>Securely save and access all your tender documents in one place.</p>
         </div>
-        <div class="feature">
-            <i class="fas fa-users"></i>
+        <div class="feature ripple">
             <h3>Verified Suppliers</h3>
             <p>We work with reputable and verified suppliers to ensure quality and reliability.</p>
         </div>
-        <div class="feature">
-            <i class="fas fa-money-bill"></i>
+        <div class="feature ripple">
             <h3>No Supplier Charges</h3>
             <p>Suppliers can use our platform for free, ensuring transparency and fairness.</p>
         </div>
-        <div class="feature">
-            <i class="fas fa-handshake"></i>
+        <div class="feature ripple">
             <h3>Low Commission Fees</h3>
             <p>We charge a minimal commission to those listing tenders, keeping the platform affordable.</p>
         </div>
@@ -61,11 +56,33 @@
     <section id="registration">
         <h2>Join tendafree Today</h2>
         <p>Register your firm on our platform and experience the benefits of tendafree for yourself.</p>
-        <a href="#">Register Now</a>
+        <a href="#" class="ripple">
+            <span class="ripple-effect"></span>
+            Register Now
+        </a>
     </section>
 
     <footer>
         <p>&copy; 2023 tendafree. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for ripple effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('.ripple');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const ripple = this.querySelector('.ripple-effect');
+                    ripple.style.top = e.clientY - this.getBoundingClientRect().top + 'px';
+                    ripple.style.left = e.clientX - this.getBoundingClientRect().left + 'px';
+                    ripple.classList.add('active');
+                    setTimeout(() => {
+                        ripple.classList.remove('active');
+                    }, 400);
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

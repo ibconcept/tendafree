@@ -1,80 +1,140 @@
+/* Define color variables */
+:root {
+    --blue: rgb(130, 190, 230);
+    --yellow: rgb(240, 230, 50);
+    --offwhite: rgb(237, 237, 237);
+    --black: rgb(75, 85, 95);
+}
+
 /* Reset some default styles */
 body, h1, h2, h3, p {
-    margin: 1%;
+    margin: 0;
     padding: 0;
+    color: var(--black);
     text-align: center;
+}
+h3{
+    color: var(--blue);
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+       font-family: 'Poppins', 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
+       background-color: var(--offwhite);
 }
 
 .logo { 
-    margin-left: 12%; 
+      
     padding: auto;
     max-width: 100px;
     height: auto;
     margin-right: 10px;
     display: inline;
-    }
-     
+}
 
 header {
-    background-color: #1ca517;
-    color: #fff;
+    background-color: var(--blue);
+    color: var(--yellow);
     text-align: center;
     padding: 4%;
-    display: flex;
-    
+    border-radius: 20px;
+    display: inline-block;
     align-items: first baseline;
     align-content: baseline;
     align-self: baseline;
 }
 
-nav {
-    background-color: #333;
+nav { 
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
-    list-style: none;
+    list-style: none;    
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+    align-items: center;
 }
 
 nav li {
-    display: inline;
     margin-right: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: var(--black);
+    border-radius: 20px;
+    padding: 3px;
+    margin-right: 3px;
+    margin-top: 2px;
+    display: inline-block;
+    background-color: var(--yellow);
 }
 
 section {
-    padding: 20px;
+    padding: 10px;
 }
 
 #features {
-    background-color: #f7f7f7;
+    background-color: var(--offwhite);
 }
 
 .feature {
     text-align: center;
-    margin: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--blue);
 }
 
 #registration {
-    background-color: #1ca517;
-    color: #fff;
+    background-color: var(--blue);
+    color: var(--yellow);
     text-align: center;
     padding: 20px;
+    
+    border-radius: 20px;
 }
 
-footer {
-    background-color: #012406;
-    color: #fff;
+footer { 
+    color: var(--yellow);
     text-align: center;
     padding: 10px;
+    
 }
+ /* Additional CSS for Material Design-inspired enhancements */
+ nav ul li a {
+    transition: color 0.3s;
+    text-decoration: none;
+    color: #333; /* Default link color */
+}
+nav ul li a:hover {
+    color: #03a9f4; /* Material Design primary color on hover */
+}
+.feature:hover {
+    transform: translateY(-5px); /* Add a slight lift effect on hover */
+}
+/* Material Design ripple effect */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.4s;
+}
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+/* Optional: Add text shadows based on the color scheme
+h1, h2, h3, p {
+    text-shadow: 1px 1px 2px var(--black), 0 0 1em var(--blue), 0 0 0.2em var(--yellow);
+} */
